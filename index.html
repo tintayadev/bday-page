@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&family=Playpen+Sans:wght@200&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
   </head>
 
   <body>
@@ -43,7 +45,6 @@ function createCandle() {
   var cake = document.querySelector(".cake");
 
   for (var i = 0; i < candleCount; i++) {
-    // Her bir mum oluşturma işlemi için 200ms gecikme ekleyerek setTimeout kullanalım
     setTimeout(function() {
       var candle = document.createElement("div");
       var flame = document.createElement("div");
@@ -54,7 +55,7 @@ function createCandle() {
       flame.style.bottom = (i * 100) / (candleCount - 1) + "%";
       cake.appendChild(candle);
       candle.appendChild(flame);
-    }, i * 50);  // Her bir mum için 200ms'lik bir gecikme ekleyerek teker teker oluşturalım
+    }, i * 50);
   }
 }
 
@@ -69,8 +70,8 @@ function blowOutFlames(countToBlow) {
 
         if (flames.length > 0) {
             const lastFlame = flames[flames.length - 1];
-            lastFlame.remove(); // Alevi kaldır
-            break; // Bu döngüden çık, bir mum kaldırıldı
+            lastFlame.remove();
+            break;
         }
     }
     // Check if there are no more flames left
@@ -91,7 +92,7 @@ function showBirthdayMessage() {
 
   const birthdayMessage = document.createElement("div");
   birthdayMessage.className = "birthday-message";
-  birthdayMessage.innerHTML = "Daniiiiii<br>May your day be filled with joy and laughter :D<br>Happy birthday 🎂";
+  birthdayMessage.innerHTML = "Daniiiiii<br><br>May all your dreams come true :D<br><br>Happy birthday 🎂🚀🥳<br><br> <img src='bday.webp' alt='' srcset=''>";
 
   birthdayMessageContainer.appendChild(birthdayMessage);
   document.body.appendChild(birthdayMessageContainer);
@@ -126,7 +127,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
       const average = sum / array.length;
 
       if (average > loudnessThreshold) {
-          blowOutFlames(2); // Yüksek ses algılandığında 2 mumun alevini kaldır
+          blowOutFlames(2);
       }
   });
 })

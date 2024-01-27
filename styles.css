@@ -52,13 +52,19 @@ button:hover {
 }
 
 .cake {
+  margin-bottom: 200px;
   position: absolute;
   width: 400px;
   height: 200px;
-  margin-top: 300px;
+  top: 85%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta el centro */
+  
 }
 
-
+#candleCount {
+  font-size: 15px;
+}
 .plate {
   width: 410px;
   height: 110px;
@@ -219,7 +225,7 @@ button:hover {
 /* Add the birthday message styles here */
 .birthday-message-container {
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #f68585; /* Peach */
@@ -232,7 +238,7 @@ button:hover {
 }
 
 .birthday-message {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
